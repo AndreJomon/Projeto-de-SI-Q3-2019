@@ -1,0 +1,5 @@
+"sep=,"
+Name,Classifier,Layers,Precision,Recall,Fscore,Consusion Matrix
+mlp_5layers,mlp,5,0.961,0.952,0.956,[350   7]
+,,,,,,[ 16 196]
+
