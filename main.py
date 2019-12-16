@@ -10,13 +10,15 @@ import os
 from pandas import read_csv
 import time
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import LinearSVC
+from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 from sklearn.model_selection import StratifiedKFold, KFold
 from sklearn.preprocessing import normalize
 import argparse
-import pickle
 import csv
-from generate_classifiers import create_clasifiers
     
 
 def sum_confusion_matrix(conf_matrix, conf_matrix_sum):
@@ -60,6 +62,59 @@ def appendrow_csv(path, name_csvfile, cl, precision, recall, fscore, parameter, 
             writer.writerow([name_csvfile, cl, str(parameter), round(precision, 3), round(recall, 3), round(fscore, 3), conf_matrix_sum[0]])
             writer.writerow(['', '', '', '', '', '' , conf_matrix_sum[1]])
             writer.writerow([''])
+            
+def create_clasifiers(cl):
+    
+    classifiers = []
+    parameters = []
+    names = []
+
+    if 'knn' in cl:
+        
+        neighbors = [1, 5, 10, 15, 20]
+        
+        for k in neighbors:
+            
+            name = cl + '_' + str(k) + 'neighbors'
+            classifiers.append(KNeighborsClassifier(n_neighbors=k))
+            parameters.append(k)
+            names.append(name)
+    
+    elif 'svm' in cl:
+        
+        c = [0.1, 1, 5, 10]
+        
+        for Cval in c:
+            
+            name = cl + '_' + str(Cval) + 'Cval'
+            classifiers.append(LinearSVC(random_state=42, C=Cval, max_iter=10000))
+            parameters.append(Cval)
+            names.append(name)
+    
+    
+    elif 'dt' in cl:
+        
+        max_f = ['sqrt', 'log2', 'auto', None]
+        
+        for maxf in max_f:
+            
+            name = cl + '_' + str(maxf) + 'feat'
+            classifiers.append(DecisionTreeClassifier(random_state=42, max_features=maxf))
+            parameters.append(maxf)
+            names.append(name)
+            
+    elif 'mlp' in cl:
+        
+        layers = [5, 10, 30, 50]
+        
+        for lay in layers:
+            
+            name = cl + '_' + str(lay) + 'layers'
+            classifiers.append(MLPClassifier(random_state=42, hidden_layer_sizes=(lay,), max_iter=1000))
+            parameters.append(lay)
+            names.append(name)
+    
+    return classifiers, names, parameters
 
 if (__name__=='__main__'):
     
@@ -86,11 +141,7 @@ if (__name__=='__main__'):
     
     X = normalize(X, 'max', axis=0)
     
-    create_clasifiers(cl)
-    
-    with open('classifiers_list_' + cl + '.pickle', 'rb') as handle:
-
-        [classifiers, names, parameters] = pickle.load(handle)
+    classifiers, names, parameters = create_clasifiers(cl)
     
     kf = StratifiedKFold(n_splits=5, random_state=42, shuffle=True)  
     
