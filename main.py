@@ -67,7 +67,7 @@ if (__name__=='__main__'):
     start = time.time()
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('-F', '--folder', required=True, type=str, help='input folder')
+    parser.add_argument('-F', '--folder', default='.', type=str, help='input folder')
     parser.add_argument('-o', '--out_dir', default='.', type=str, help='output folder')
     parser.add_argument('--clf', choices=['knn', 'svm', 'dt', 'mlp'],  default='knn', type=str, help='classifier')
 
