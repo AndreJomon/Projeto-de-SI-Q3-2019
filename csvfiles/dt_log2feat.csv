@@ -1,5 +1,0 @@
-"sep=,"
-Name,Classifier,Features,Precision,Recall,Fscore,Consusion Matrix
-dt_log2feat,dt,log2,0.938,0.938,0.938,[340  17]
-,,,,,,[ 16 196]
-

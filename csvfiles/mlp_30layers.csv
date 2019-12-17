@@ -1,5 +1,0 @@
-"sep=,"
-Name,Classifier,Layers,Precision,Recall,Fscore,Consusion Matrix
-mlp_30layers,mlp,30,0.978,0.97,0.973,[354   3]
-,,,,,,[ 11 201]
-

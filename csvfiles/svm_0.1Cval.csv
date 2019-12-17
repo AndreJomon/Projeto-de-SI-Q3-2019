@@ -1,5 +1,0 @@
-"sep=,"
-Name,Classifier,C value,Precision,Recall,Fscore,Consusion Matrix
-svm_0.1Cval,svm,0.1,0.96,0.939,0.948,[354   3]
-,,,,,,[ 24 188]
-

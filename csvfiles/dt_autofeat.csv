@@ -1,5 +1,0 @@
-"sep=,"
-Name,Classifier,Features,Precision,Recall,Fscore,Consusion Matrix
-dt_autofeat,dt,auto,0.903,0.901,0.902,[332  25]
-,,,,,,[ 27 185]
-

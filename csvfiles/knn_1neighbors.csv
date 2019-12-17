@@ -1,5 +1,0 @@
-"sep=,"
-Name,Classifier,Neighbors,Precision,Recall,Fscore,Consusion Matrix
-knn_1neighbors,knn,1,0.944,0.943,0.944,[343  14]
-,,,,,,[ 16 196]
-
