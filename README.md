@@ -8,32 +8,24 @@ Projeto da matéria de Sistemas Inteligentes, aula ministrada no terceiro quadri
 * [Felipe K. Kobayashi](https://www.github.com/felipe-k)
 * [Vinícius V. Gonçalves](https://www.github.com/Vimerum)
 
+# Uso
+O projeto utiliza as bibliotecas [Scikit-learn](https://scikit-learn.org/) para implementação dos métodos de Machine Learning, [Pandas](https://pandas.pydata.org/) para análise e estruturação de dados, [Seaborn](https://seaborn.pydata.org/) e [Matplotlib](https://matplotlib.org/) para visualização dos resultados. Todas estas podem ser encontradas no arquivo `requirements.txt` do repositório e podem ser instaladas pelo gerenciador de pacotes `pip` usando o comando:
+```bash
+pip install -r requirements.txt
+```
+Todo o processo descrito no projeto pode ser encontrado e executado no [notebook do grupo](./Projeto_SI.ipynb).
+
 
 ## Resultados
-![dt_graph.png](./dt_graph.png)
-![dt_mat.png](./dt_mat.png)
-![example_benign.png](./example_benign.png)
-![example_malign.png](./example_malign.png)
-![knn_graph.png](./knn_graph.png)
-![knn_mat.png](./knn_mat.png)
-![mlp_graph.png](./mlp_graph.png)
-![mlp_mat.png](./mlp_mat.png)
-![old](./old)
-![svc_graph.png](./svc_graph.png)
-![svc_mat.png](./svc_mat.png)
-![tabela_comparison.png](./tabela_comparison.png)
-![tabela_n_experiments.png](./tabela_n_experiments.png)
-
-<img src="dt_graph.png" alt="dt_graph.png"/>
-<img src="dt_mat.png" alt="dt_mat.png"/>
-<img src="example_benign.png" alt="example_benign.png"/>
-<img src="example_malign.png" alt="example_malign.png"/>
-<img src="knn_graph.png" alt="knn_graph.png"/>
-<img src="knn_mat.png" alt="knn_mat.png"/>
-<img src="mlp_graph.png" alt="mlp_graph.png"/>
-<img src="mlp_mat.png" alt="mlp_mat.png"/>
-<img src="old" alt="old"/>
-<img src="svc_graph.png" alt="svc_graph.png"/>
-<img src="svc_mat.png" alt="svc_mat.png"/>
-<img src="tabela_comparison.png" alt="tabela_comparison.png"/>
-<img src="tabela_n_experiments.png" alt="tabela_n_experiments.png"/>
+### Decision Tree
+![dt_graph.png](./Imagens/dt_graph.png)
+![dt_mat.png](./Imagens/dt_mat.png)
+### K-Nearest Neighbors
+![knn_graph.png](./Imagens/knn_graph.png)
+![knn_mat.png](./Imagens/knn_mat.png)
+### Multi-layer Perceptron
+![mlp_graph.png](./Imagens/mlp_graph.png)
+![mlp_mat.png](./Imagens/mlp_mat.png)
+### Linear Support Vector Machine
+![svc_graph.png](./Imagens/svc_graph.png)
+![svc_mat.png](./Imagens/svc_mat.png)
